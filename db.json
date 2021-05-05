@@ -1,0 +1,38 @@
+{
+  "employees": [
+    {
+      "id": "emp101",
+      "username": "padma",
+      "role": "Manager",
+      "contactpreference": "6374274938",
+      "email": "davidmanopadma123@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "Users": [
+    {
+      "id": "2",
+      "description": "dfdg"
+    },
+    {
+      "id": "3",
+      "manager": "asfdhsabd"
+    },
+    {
+      "id": "4",
+      "manager": "scasa"
+    }
+  ],
+  "CreateProjects": [
+    {},
+    {
+      "id": "1",
+      "startdate": "2021-05-13",
+      "enddate": "2021-05-28",
+      "description": "ashjabggbg"
+    },
+    {
+      "id": "dpnb20m"
+    }
+  ]
+}

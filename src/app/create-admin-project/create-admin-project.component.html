@@ -1,0 +1,107 @@
+<!-- <<div class="div1" fxLayoutAlign="center center">
+  <mat-card fxFlex="30">
+    <h1 style="color: rgb(40, 40, 109);">CREATE PROJECT</h1>
+  <form (ngSubmit)='onSubmit()' fxLayoutAlign="stretch" fxLayout="column"><br> -->
+  <!-- <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Project ID</mat-label>
+      <input matInput placeholder="Enter ID" name="id" [(ngModel)]="createproject.id" #id="ngModel">
+    </mat-form-field>
+  </p> -->
+  <!-- <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Project Name</mat-label>
+      <input matInput placeholder="Placeholder" type="text" name="title" [(ngModel)]="createproject.title" #title="ngModel">
+    </mat-form-field>
+  </p> -->
+  
+
+  <!-- <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Manager</mat-label>
+    <mat-select>
+      <mat-option >Select</mat-option>
+      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="option2">Option 2</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+  
+  
+  <!-- <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Start Date</mat-label>
+      <input matInput placeholder="Placeholder" type="date" name="startdate" [(ngModel)]="createproject.startdate" #startdate="ngModel">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>End Date</mat-label>
+      <input matInput placeholder="Placeholder" type="date" name="enddate" [(ngModel)]="createproject.enddate" #enddate="ngModel">
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Enter description" type="text" name="description" [(ngModel)]="createproject.description" #description="ngModel">
+     -->
+      <!-- <mat-hint>Enter Description</mat-hint> -->
+    <!-- </mat-form-field>
+
+  </p>
+  <button mat-raised-button color="primary">Save</button>
+</form>
+</mat-card>
+</div> -->
+
+
+
+<form #myForm="ngForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Project ID</mat-label>
+    <input class="form-control" matInput placeholder="p3"  name="id" [(ngModel)]="userObj.id" #id="ngModel">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Start Date</mat-label>
+    <input class="form-control" matInput placeholder="p3" type="date"  name="startdate" [(ngModel)]="userObj.startdate" #startdate="ngModel">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>End Date</mat-label>
+    <input class="form-control" matInput placeholder="p3" type="date" name="enddate" [(ngModel)]="userObj.enddate" #enddate="ngModel">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Project Description</mat-label>
+    <input  class="form-control" ngModel matInput placeholder="this is a project"  name="description" [(ngModel)]="userObj.description"  >
+  </mat-form-field>
+  <button mat-raised-button (click)="addProject(myForm.value)" *ngIf="!isEdit">Submit</button>
+  <button mat-raised-button *ngIf="isEdit" (click)="updateProject()">Update</button>
+ </form>  
+ <br>
+ <table class="table">
+   <thead>
+     <tr>
+       <th scope="col">ID </th>
+       <th scope="col">Start Date </th>
+       <th scope="col">End Date </th>
+
+       <th scope="col">Description </th>
+       <th scope="col">Edit </th>
+       <th scope="col">Delete </th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let project of allProject">
+       <td>{{project.id}}</td>
+       <td>{{project.startdate}}</td>
+       <td>{{project.enddate}}</td>
+
+       <td>{{project.description}}</td>
+       <td>    <button mat-raised-button (click)="editProject(project)" >Edit</button>
+       </td>
+       <td>    <button (click)="deleteProject(project)"mat-raised-button >Delete</button>
+       </td>
+     </tr>
+
+   </tbody>
+ </table>
